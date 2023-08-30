@@ -1,0 +1,33 @@
+<input [(ngModel)]="searchPais" placeholder="Busca Pais">
+<button (click)="buscarPais()">Buscar</button>
+
+<ul>
+  <li *ngFor="let data of Pais">
+    {{ data.name.common}} -  {{ data.name.official }} - <img [src]="data.flags.png" alt="Bandera"> -
+    <button type="button" name="button" (click)="detallePais()" class="btn btn-primary">Detalle</button>
+  </li>
+</ul>
+
+<p>Total busquedas: {{ contPais | async }}</p>
+
+
+<input [(ngModel)]="searchCapital" placeholder="Busca Capital">
+<button (click)="buscarCapital()">Buscar</button>
+
+<ul>
+  <li *ngFor="let data of Capital">
+    {{ data.name.common}} -  {{ data.name.official }} - <img [src]="data.flags.png" alt="Bandera"> -
+    <button type="button" name="button" (click)="detalleCapital()" class="btn btn-primary">Detalle</button>
+
+  </li>
+</ul>
+
+<p>Total busquedas: {{ contCapital | async }}</p>
+
+<ul>
+    <li *ngFor="let term of historial">
+      {{ term }}
+    </li>
+  </ul>
+
+
